@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %} Delivery {% endblock %}
+
+{% block body %}
+<h1>Форма </h1>
+
+<h2> Введите номер телефона и id доставки </h2>
+<form method="post" action="/delivery_data">
+  <h3>Номер телефона</h3>
+  <input type="text" name="phone"><br>
+  <h3>Id</h3>
+  <input type="text" name="id">
+  <button type="submit"> Check </button>
+</form>
+
+
+
+{% endblock %}

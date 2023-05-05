@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %} Delivery {% endblock %}
+
+{% block body %}
+<h1>Данные о тарифах</h1>
+
+ <table>
+            <tr>
+                <th>ID тарифа</th>
+                <th>Название тарифа </th>
+                <th>Максимальная масса груза</th>
+                <th>Гарантируемый срок доставки</th>
+            </tr>
+            {% for item in bd %}
+            <tr>
+                <td>{{ item.Id }}</td>
+                <td>{{ item.Name }}</td>
+                <td>{{ item.Max_mass }}</td>
+                <td>{{ item.Time_of_delivery }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+{% endblock %}
