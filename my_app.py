@@ -49,8 +49,13 @@ def delivery_form():
 def delivery_data():
     id = request.form.get("id")
     phone = request.form.get("phone")
+    print("До первого ")
+    print(Delivery.query.filter_by(Id=int(id)).first())
+    print(Delivery.query.filter_by(Number_of_destination=phone).first())
     if ((Delivery.query.filter_by(Id=int(id)).first()) and (Delivery.query.filter_by(Number_of_destination=phone).first())):#Если данные существуют
+        print("после вервого")
         if (Delivery.query.filter_by(Id=int(id)).first()) == (Delivery.query.filter_by(Number_of_destination=phone).first()): #Если равны
+            print("В основном")
             item = Delivery.query.filter_by(Id=int(id)).first()
             name = item.Number_of_destination
             time = item.Time_of_destination

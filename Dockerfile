@@ -8,5 +8,6 @@ RUN apt-get update && apt-get install -y python3 && apt install -y python3.10-ve
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
 RUN pip3 install -r requirements.txt
+RUN flake8 --exit-zero app.py && bandit --exit-zero my_app.py
 
 CMD ["python", "my_app.py"]
